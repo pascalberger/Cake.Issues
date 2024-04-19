@@ -39,13 +39,42 @@
 
         public sealed class TheInternalCreateReportMethod
         {
-            public static IEnumerable<object[]> ReportFormatSettingsCombinations =>
-                from b1 in new[] { false, true }
-                from b2 in new[] { false, true }
-                from b3 in new[] { false, true }
-                from b4 in new[] { false, true }
-                from b5 in new[] { false, true }
-                select new object[] { b1, b2, b3, b4, b5 };
+            public static TheoryData<bool, bool, bool, bool, bool> ReportFormatSettingsCombinations =>
+                new()
+                {
+                    { false, false, false, false, false },
+                    { false, false, false, false, true },
+                    { false, false, false, true, false },
+                    { false, false, false, true, true },
+                    { false, false, true, false, false },
+                    { false, false, true, false, true },
+                    { false, false, true, true, false },
+                    { false, false, true, true, true },
+                    { false, true, false, false, false },
+                    { false, true, false, false, true },
+                    { false, true, false, true, false },
+                    { false, true, false, true, true },
+                    { false, true, true, false, false },
+                    { false, true, true, false, true },
+                    { false, true, true, true, false },
+                    { false, true, true, true, true },
+                    { true, false, false, false, false },
+                    { true, false, false, false, true },
+                    { true, false, false, true, false },
+                    { true, false, false, true, true },
+                    { true, false, true, false, false },
+                    { true, false, true, false, true },
+                    { true, false, true, true, false },
+                    { true, false, true, true, true },
+                    { true, true, false, false, false },
+                    { true, true, false, false, true },
+                    { true, true, false, true, false },
+                    { true, true, false, true, true },
+                    { true, true, true, false, false },
+                    { true, true, true, false, true },
+                    { true, true, true, true, false },
+                    { true, true, true, true, true },
+                };
 
             [Theory]
             [MemberData(nameof(ReportFormatSettingsCombinations))]
