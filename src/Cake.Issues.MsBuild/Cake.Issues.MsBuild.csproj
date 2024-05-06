@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MSBuild.StructuredLogger" Version="2.2.235" />
+    <PackageReference Include="MSBuild.StructuredLogger" Version="2.2.240" />
   </ItemGroup>
   
   <ItemGroup>
